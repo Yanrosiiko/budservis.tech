@@ -1,0 +1,9 @@
+css/angular_material/* linguist-vendored=true
+css/font_face_roboto.css linguist-vendored=true
+fonts/* linguist-vendored=true
+js/angular_material/* linguist-vendored=true
+js/angularjs/* linguist-vendored=true
+
+*angular_constants.js linguist-vendored=false
+*angular_controller.js linguist-vendored=false
+*angular_module.js linguist-vendored=false

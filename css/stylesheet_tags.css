@@ -1,0 +1,15 @@
+body {
+    overflow: hidden !important;
+}
+
+md-content {
+    overflow-x: hidden !important;
+}
+
+a {
+    color: currentColor;
+}
+
+a:hover {
+    cursor: pointer;
+}

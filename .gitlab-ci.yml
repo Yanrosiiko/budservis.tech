@@ -1,0 +1,13 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    - mkdir .temp
+    - cp -r * .temp
+    - mv .temp public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

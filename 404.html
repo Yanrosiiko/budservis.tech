@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>404 - Not found</title>
+    <link rel="stylesheet" href="css/angular_material/1.1.18/angular-material.min.css">
+    <link rel="stylesheet" href="css/font_face_roboto.css">
+    <link rel="stylesheet" href="css/stylesheet_tags.css">
+    <script src="js/angularjs/1.7.7/angular.min.js"></script>
+    <script src="js/angularjs/1.7.7/angular-animate.min.js"></script>
+    <script src="js/angularjs/1.7.7/angular-aria.min.js"></script>
+    <script src="js/angularjs/1.7.7/angular-messages.min.js"></script>
+    <script src="js/angular_material/1.1.18/angular-material.min.js"></script>
+    <script src="js/angular_module.js"></script>
+    <script src="js/angular_constants.js"></script>
+    <script src="js/angular_controller.js"></script>
+</head>
+<body ng-app="application" ng-controller="applicationCtrl" ng-init="onInit();"
+      md-theme="{{currentTheme}}" md-theme-watch layout="column" layout-fill class="ng-cloak">
+<!-- Верхнее меню -->
+<md-toolbar class="md-toolbar-tools md-hue-2" md-scroll-shrink style="padding: 0 8px;">
+    <!-- Reload content -->
+    <a href="/budservis.tech/" onclick="window.location = '/budservis.tech/'" style="height: 100%;">
+        <md-button aria-label="Update globe" style="height: 100%; padding: 0; min-width: 0;">
+            <md-tooltip>Reload content</md-tooltip>
+            <div style="height: 40px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 64 64" width="40" height="40">
+                    <g style="fill:currentColor; stroke: currentColor; stroke-width: 1px;" ng-bind-html="pictures.globe"/>
+                </svg>
+            </div>
+        </md-button>
+    </a>
+    <!-- Reload content -->
+    <a href="/budservis.tech/" onclick="window.location = '/budservis.tech/'" style="height: 100%;">
+        <md-button aria-label="Update" style="height: 100%; padding: 0; min-width: 0;">
+            <md-tooltip>Reload content</md-tooltip>
+            <b class="md-title" hide-xs="true">LLC "BIC "Budservis"</b>
+            <b class="md-title" show-xs="true" hide="true">"BIC "Budservis"</b>
+        </md-button>
+    </a>
+    <!-- Разделитель -->
+    <p flex></p>
+    <!-- Page color -->
+    <md-menu-bar style="height: 100%; padding: 0;">
+        <md-tooltip hide-md="true" hide-sm="true" hide-xs="true">Page color</md-tooltip>
+        <md-menu md-position-mode="target-right bottom" style="height: 100%;">
+            <md-button aria-label="Color Palette" ng-click="$mdMenu.open()"
+                       style="height: 100%; min-width: 0; padding: 0; color: currentColor;">
+                <div style="height: 30px">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="30" height="30">
+                        <g style="fill:currentColor;" ng-bind-html="pictures.colorTheme"/>
+                    </svg>
+                </div>
+            </md-button>
+            <md-menu-content width="2" ng-mouseleave="$mdMenu.close()" style="padding: 0;">
+                <md-menu-item ng-repeat="item in themesList">
+                    <md-button class="select-{{item}}-theme" ng-click="changeTheme(item)">
+                        <span class="md-title">{{item}}</span>
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </md-menu-bar>
+</md-toolbar>
+<md-content flex layout="column" style="overflow-y: hidden;" ng-controller="emptyCtrl">
+    <!-- Основной текст страницы -->
+    <div style="background-color: white;  flex-grow: inherit;">
+        <div layout="row" layout-wrap layout-padding>
+            <div>
+                <div layout="row" layout-padding md-whiteframe="2" layout-align="start center" style="background-color: white;">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 26 26">
+                        <g md-colors="{fill: 'primary-900'}"
+                           transform="matrix(1.4543486,0,0,1.454388,-5.7818874,-6.0320437)" ng-bind-html="pictures.cross"/>
+                    </svg>
+                    <span class="md-display-1">404 - Not found</span>
+                </div>
+            </div>
+            <!-- Разделитель -->
+            <div flex></div>
+        </div>
+    </div>
+</md-content>
+</body>
+</html>
