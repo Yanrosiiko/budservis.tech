@@ -6,14 +6,14 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>LLC "BIC "Budservis"</title>
-    <link rel="stylesheet" href="css/angular_material/1.1.18/angular-material.min.css">
+    <link rel="stylesheet" href="css/angular_material/1.1.20/angular-material.min.css">
     <link rel="stylesheet" href="css/font_face_roboto.css">
     <link rel="stylesheet" href="css/stylesheet_tags.css">
-    <script src="js/angularjs/1.7.7/angular.min.js"></script>
-    <script src="js/angularjs/1.7.7/angular-animate.min.js"></script>
-    <script src="js/angularjs/1.7.7/angular-aria.min.js"></script>
-    <script src="js/angularjs/1.7.7/angular-messages.min.js"></script>
-    <script src="js/angular_material/1.1.18/angular-material.min.js"></script>
+    <script src="js/angularjs/1.7.8/angular.min.js"></script>
+    <script src="js/angularjs/1.7.8/angular-animate.min.js"></script>
+    <script src="js/angularjs/1.7.8/angular-aria.min.js"></script>
+    <script src="js/angularjs/1.7.8/angular-messages.min.js"></script>
+    <script src="js/angular_material/1.1.20/angular-material.min.js"></script>
     <script src="js/angular_module.js"></script>
     <script src="js/angular_constants.js"></script>
     <script src="js/angular_controller.js"></script>
@@ -27,27 +27,27 @@
             <md-tooltip hide-md="true" hide-sm="true" hide-xs="true">Main menu</md-tooltip>
             <md-menu md-position-mode="target-right bottom" style="height: 100%;">
                 <md-button aria-label="Pages" ng-click="$mdMenu.open()"
-                           style="height: 100%; min-width: 0; padding: 0; color: currentColor;">
+                           style="min-width: 0; padding: 0; color: currentColor;">
                     <div style="height: 30px">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" width="30" height="30">
                             <g style="fill:currentColor;" ng-bind-html="pictures.menu"/>
                         </svg>
                     </div>
                 </md-button>
-                <md-menu-content ng-mouseleave="$mdMenu.close()" width="3" height="6" style="padding: 0;">
+                <md-menu-content ng-mouseleave="$mdMenu.close()" width="3" style="padding: 0;">
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/about.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/about.html')" style="margin: 0;">
                             <span class="md-subhead">About</span>
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/team.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/team.html')" style="margin: 0;">
                             <span class="md-subhead">Team</span>
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-menu style="height: 100%;">
-                            <md-button md-colors="{color: 'primary-900'}" aria-label="Open menu" ng-click="$mdMenu.open($event)" style="height: 100%; margin: 0;">
+                            <md-button md-colors="{color: 'primary-900'}" aria-label="Open menu" ng-click="$mdMenu.open($event)" style="margin: 0;">
                                 <span class="md-subhead">Experience</span>
                             </md-button>
                             <md-menu-content ng-mouseleave="$mdMenu.close()" width="3" style="padding: 0;">
@@ -75,28 +75,28 @@
                         </md-menu>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/current-project.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/current-project.html')" style="margin: 0;">
                             <span class="md-subhead">Current Project: TPS "Al-Hiswa"</span>
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/awards.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/awards.html')" style="margin: 0;">
                             <span class="md-subhead">Awards</span>
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/partners.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/partners.html')" style="margin: 0;">
                             <span class="md-subhead">Partners</span>
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/career.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/career.html')" style="margin: 0;">
                             <span class="md-subhead">Career at LLC "BIC Budservis"</span>
                         </md-button>
                     </md-menu-item>
                     <md-divider class="md-hue-1" style="margin: 0;"></md-divider>
                     <md-menu-item>
-                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/contacts.html')" style="height: 100%; margin: 0;">
+                        <md-button md-colors="{color: 'primary-900'}" ng-click="getPageContent('/contacts.html')" style="margin: 0;">
                             <span class="md-subhead">Contacts</span>
                         </md-button>
                     </md-menu-item>
@@ -105,7 +105,7 @@
         </md-menu-bar>
         <!-- Reload content -->
         <a href="/budservis.tech/" onclick="window.location = '/budservis.tech/'" style="height: 100%;">
-            <md-button aria-label="Update globe" style="height: 100%; padding: 0; min-width: 0;">
+            <md-button aria-label="Update globe" style="padding: 0; min-width: 0;">
                 <md-tooltip>Reload content</md-tooltip>
                 <div style="height: 40px;">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 64 64" width="40" height="40">
@@ -116,7 +116,7 @@
         </a>
         <!-- Reload content -->
         <a href="/budservis.tech/" onclick="window.location = '/budservis.tech/'" style="height: 100%;">
-            <md-button aria-label="Update" style="height: 100%; padding: 0; min-width: 0;">
+            <md-button aria-label="Update" style="padding: 0; min-width: 0;">
                 <md-tooltip>Reload content</md-tooltip>
                 <b class="md-title" hide-xs="true">LLC "BIC "Budservis"</b>
                 <b class="md-title" show-xs="true" hide="true">"BIC "Budservis"</b>
@@ -124,21 +124,21 @@
         </a>
         <!-- About Us -->
         <a href="#!/about.html" onclick="event.preventDefault();" ng-click="getPageContent('/about.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>About Us</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">About</span>
             </md-button>
         </a>
         <!-- Our Team -->
         <a href="#!/team.html" onclick="event.preventDefault();" ng-click="getPageContent('/team.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>Our Team</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Team</span>
             </md-button>
         </a>
         <!-- Our Experience -->
         <md-menu md-position-mode="target-left bottom" hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%;">
-            <md-button aria-label="Open menu" ng-click="$mdMenu.open($event)" style="height: 100%; color: currentColor;">
+            <md-button aria-label="Open menu" ng-click="$mdMenu.open($event)" style="color: currentColor;">
                 <md-tooltip>Our Experience</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Experience</span>
             </md-button>
@@ -171,35 +171,35 @@
         </md-menu>
         <!-- Our Current Project -->
         <a href="#!/current-project.html" onclick="event.preventDefault();" ng-click="getPageContent('/current-project.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>TPS "Al-Hiswa"</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Current Project</span>
             </md-button>
         </a>
         <!-- Our Awards -->
         <a href="#!/awards.html" onclick="event.preventDefault();" ng-click="getPageContent('/awards.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>Our Awards</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Awards</span>
             </md-button>
         </a>
         <!-- Our partners -->
         <a href="#!/partners.html" onclick="event.preventDefault();" ng-click="getPageContent('/partners.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>Our partners</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Partners</span>
             </md-button>
         </a>
         <!-- Job and Career -->
         <a href="#!/career.html" onclick="event.preventDefault();" ng-click="getPageContent('/career.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>Career at LLC "BIC Budservis"</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Job and Career</span>
             </md-button>
         </a>
         <!-- Our Contacts -->
         <a href="#!/contacts.html" onclick="event.preventDefault();" ng-click="getPageContent('/contacts.html')" style="height: 100%;">
-            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="height: 100%; margin: 0;">
+            <md-button hide-md="true" hide-sm="true" hide-xs="true" style="margin: 0;">
                 <md-tooltip>Our Contacts</md-tooltip>
                 <span class="md-subhead" style="font-weight: 500;">Contacts</span>
             </md-button>
@@ -211,7 +211,7 @@
             <md-tooltip hide-md="true" hide-sm="true" hide-xs="true">Page color</md-tooltip>
             <md-menu md-position-mode="target-right bottom" style="height: 100%;">
                 <md-button aria-label="Color Palette" ng-click="$mdMenu.open()"
-                           style="height: 100%; min-width: 0; padding: 0; color: currentColor;">
+                           style="min-width: 0; padding: 0; color: currentColor;">
                     <div style="height: 30px">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="30" height="30">
                             <g style="fill:currentColor;" ng-bind-html="pictures.colorTheme"/>

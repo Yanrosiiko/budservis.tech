@@ -6,6 +6,13 @@ md-content {
     overflow-x: hidden !important;
 }
 
+md-menu-content,
+md-menu-item.md-in-menu-bar,
+.md-button {
+    height: 100% !important;
+    white-space: normal !important;
+}
+
 a {
     color: currentColor;
 }
