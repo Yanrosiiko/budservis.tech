@@ -20,9 +20,9 @@
 </head>
 <body ng-app="application" ng-controller="applicationCtrl" ng-init="onInit(); extendController('indexCtrl'); indexOnInit();"
      md-theme="{{currentTheme}}" md-theme-watch layout="column" layout-fill class="ng-cloak">
-    <!-- Верхняя панель -->
+    <!-- Top panel -->
     <md-toolbar class="md-toolbar-tools md-hue-2" md-scroll-shrink style="padding: 0 8px;">
-        <!-- Main menu -->
+        <!-- Mobile menu -->
         <md-menu-bar show-md="true" show-sm="true" show-xs="true" hide="true" style="height: 100%; padding: 0;">
             <md-tooltip hide-md="true" hide-sm="true" hide-xs="true">Main menu</md-tooltip>
             <md-menu md-position-mode="target-right bottom" style="height: 100%;">
@@ -204,7 +204,7 @@
                 <span class="md-subhead" style="font-weight: 500;">Contacts</span>
             </md-button>
         </a>
-        <!-- Разделитель -->
+        <!-- Divider -->
         <p flex></p>
         <!-- Page color -->
         <md-menu-bar style="height: 100%; padding: 0;">
@@ -229,13 +229,13 @@
         </md-menu-bar>
     </md-toolbar>
     <md-content flex layout="column">
-        <!-- Основной текст страницы -->
+        <!-- Page content -->
         <div style="background-color: white; flex-grow: inherit;">
             <div ng-if="!pageContent.endsWith('empty.html')" ng-include="pageContent" class="fade-element-in"></div>
         </div>
-        <!-- Разделитель -->
+        <!-- Divider -->
         <span flex style="background-color: white;"></span>
-        <!-- Нижнее меню -->
+        <!-- Bottom menu -->
         <div layout-align="center center" layout-padding class="bottom-footer-{{currentTheme}}-theme bottom-footer-color-{{currentTheme}}-theme" style="flex-grow: inherit;">
             <div layout="column" layout-padding style="text-align: center;">
                 <span class="md-title" hide-xs="true">Your cooperation with us will be successful and mutually beneficial!</span>

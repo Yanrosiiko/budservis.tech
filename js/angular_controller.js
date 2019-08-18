@@ -32,7 +32,7 @@ application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeo
 
         scope.indexOnInit = function () {
             let path = location.path();
-            if (path.length > 10) {
+            if (path.length > 8) {
                 scope.getPageContent(path);
             } else {
                 scope.getPageContent('/about.html');

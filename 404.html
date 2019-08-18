@@ -20,7 +20,7 @@
 </head>
 <body ng-app="application" ng-controller="applicationCtrl" ng-init="onInit();"
       md-theme="{{currentTheme}}" md-theme-watch layout="column" layout-fill class="ng-cloak">
-<!-- Верхнее меню -->
+<!-- Top panel -->
 <md-toolbar class="md-toolbar-tools md-hue-2" md-scroll-shrink style="padding: 0 8px;">
     <!-- Reload content -->
     <a href="/budservis.tech/" onclick="window.location = '/budservis.tech/'" style="height: 100%;">
@@ -41,7 +41,7 @@
             <b class="md-title" show-xs="true" hide="true">"BIC "Budservis"</b>
         </md-button>
     </a>
-    <!-- Разделитель -->
+    <!-- Divider -->
     <p flex></p>
     <!-- Page color -->
     <md-menu-bar style="height: 100%; padding: 0;">
@@ -66,21 +66,21 @@
     </md-menu-bar>
 </md-toolbar>
 <md-content flex layout="column" style="overflow-y: hidden;" ng-controller="emptyCtrl">
-    <!-- Основной текст страницы -->
-    <div style="background-color: white;  flex-grow: inherit;">
-        <div layout="row" layout-wrap layout-padding>
-            <div>
-                <div layout="row" layout-padding md-whiteframe="2" layout-align="start center" style="background-color: white;">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 26 26">
-                        <g md-colors="{fill: 'primary-900'}"
-                           transform="matrix(1.4543486,0,0,1.454388,-5.7818874,-6.0320437)" ng-bind-html="pictures.cross"/>
-                    </svg>
-                    <span class="md-display-1">404 - Not found</span>
-                </div>
+    <!-- Page content -->
+    <div layout="row" layout-padding layout-wrap style="flex-grow: inherit; background-color: white;">
+        <div layout="column">
+            <div layout="row" layout-align="center center" layout-padding md-whiteframe="1" style="background-color: white;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 26 26">
+                    <g md-colors="{fill: 'primary-600'}"
+                       transform="matrix(1.4543486,0,0,1.454388,-5.7818874,-6.0320437)" ng-bind-html="pictures.cross"/>
+                </svg>
+                <span class="md-display-1">404 - Not found</span>
             </div>
-            <!-- Разделитель -->
+            <!-- Divider -->
             <div flex></div>
         </div>
+        <!-- Divider -->
+        <div flex></div>
     </div>
 </md-content>
 </body>
