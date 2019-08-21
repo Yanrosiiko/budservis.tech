@@ -8,9 +8,20 @@ md-content {
 
 md-menu-content,
 md-menu-item.md-in-menu-bar,
-.md-button {
+.md-button:not(.md-fab) {
     height: 100% !important;
     white-space: normal !important;
+}
+
+.md-fab.scroll-fab {
+    position: fixed !important;
+
+    transform: scale(0);
+    transition: transform 0.2s;
+}
+
+.scroll-fab.scrolling {
+    transform: scale(1);
 }
 
 a {

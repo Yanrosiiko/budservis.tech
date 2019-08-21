@@ -17,6 +17,7 @@ application.controller('applicationCtrl', ['$scope', '$controller', '$sce', 'THE
             globe: sce.trustAsHtml(CONSTANTS.PICTURES.GLOBE),
             cross: sce.trustAsHtml(CONSTANTS.PICTURES.CROSS),
             menu: sce.trustAsHtml(CONSTANTS.PICTURES.MENU),
+            arrow_up: sce.trustAsHtml(CONSTANTS.PICTURES.ARROW_UP),
         };
         scope.onInit = function () {
             scope.changeTheme(localStorage.getItem('selected_angular_material_theme'));
@@ -27,8 +28,8 @@ application.controller('applicationCtrl', ['$scope', '$controller', '$sce', 'THE
     }
 ]);
 
-application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeout',
-    function (scope, location, mdDialog, timeout) {
+application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeout', '$mdUtil',
+    function (scope, location, mdDialog, timeout, mdUtil) {
 
         scope.indexOnInit = function () {
             let path = location.path();
@@ -62,5 +63,32 @@ application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeo
                     "</md-dialog>",
             });
         };
+        let mainContentArea = document.querySelector("body");
+        let scrollContentEl = mainContentArea.querySelector('md-content[md-scroll-y]');
+        scope.scrollTop = function() {
+            mdUtil.animateScrollTo(scrollContentEl, 0, 200);
+        };
     }
-]);
+])
+.directive('scrollClass', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attr) {
+            let scrollMainChildren = element.parent().children();
+            let isScrolling = false;
+
+            updateState();
+
+            scrollMainChildren.on('scroll', updateState);
+
+            function updateState() {
+                // md-content element
+                let newState = scrollMainChildren[1].scrollTop !== 0;
+                if (newState !== isScrolling) {
+                    element.toggleClass(attr.scrollClass, newState);
+                }
+                isScrolling = newState;
+            }
+        }
+    };
+});

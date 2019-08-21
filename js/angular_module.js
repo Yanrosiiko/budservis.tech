@@ -67,6 +67,30 @@ const application = angular.module("application", ['ngMaterial', 'ngAnimate', 'n
                 style += "color: rgba(255,255,255,0.87);";
             }
             style +=
+                "} " +
+                // scroll-up fab-button color
+                ".md-button.md-" + theme + "-theme.md-fab," +
+                ".md-button.md-" + theme + "-theme.md-fab md-icon { ";
+            if (palette === 'lime' || palette === 'yellow' || palette === 'amber') {
+                style += "color: rgba(0,0,0,0.87);" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['600'] + ";";
+            } else {
+                style += "color: rgba(255,255,255,0.87);" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['500'] + ";";
+            }
+            style +=
+                "} " +
+                // scroll-up fab-button color :hover
+                ".md-button.md-" + theme + "-theme.md-fab:hover," +
+                ".md-button.md-" + theme + "-theme.md-fab:hover md-icon { ";
+            if (palette === 'lime' || palette === 'yellow' || palette === 'amber') {
+                style += "color: rgba(0,0,0,0.87);" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['700'] + " !important;";
+            } else {
+                style += "color: rgba(255,255,255,0.87);" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['600'] + " !important;";
+            }
+            style +=
                 "} ";
         }
         $mdThemingProvider.registerStyles(style);

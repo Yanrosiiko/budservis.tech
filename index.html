@@ -8,7 +8,7 @@
     <title>LLC "BIC "Budservis"</title>
     <link rel="stylesheet" href="css/angular_material/1.1.20/angular-material.min.css">
     <link rel="stylesheet" href="css/font_face_roboto.css">
-    <link rel="stylesheet" href="css/stylesheet_tags.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <script src="js/angularjs/1.7.8/angular.min.js"></script>
     <script src="js/angularjs/1.7.8/angular-animate.min.js"></script>
     <script src="js/angularjs/1.7.8/angular-aria.min.js"></script>
@@ -19,7 +19,7 @@
     <script src="js/angular_controller.js"></script>
 </head>
 <body ng-app="application" ng-controller="applicationCtrl" ng-init="onInit(); extendController('indexCtrl'); indexOnInit();"
-     md-theme="{{currentTheme}}" md-theme-watch layout="column" layout-fill class="ng-cloak">
+     md-theme="{{currentTheme}}" md-theme-watch layout="column" flex class="ng-cloak" style="overflow: hidden;">
     <!-- Top panel -->
     <md-toolbar class="md-toolbar-tools md-hue-2" md-scroll-shrink style="padding: 0 8px;">
         <!-- Mobile menu -->
@@ -228,7 +228,7 @@
             </md-menu>
         </md-menu-bar>
     </md-toolbar>
-    <md-content flex layout="column">
+    <md-content flex layout="column" md-scroll-y>
         <!-- Page content -->
         <div style="background-color: white; flex-grow: inherit;">
             <div ng-if="!pageContent.endsWith('empty.html')" ng-include="pageContent" class="fade-element-in"></div>
@@ -245,5 +245,19 @@
             </div>
         </div>
     </md-content>
+    <!-- Scroll-up fub-button -->
+    <md-button class="md-fab md-fab-bottom-right scroll-fab"
+               scroll-class="scrolling"
+               ng-click="scrollTop()"
+               aria-label="Back to Top">
+        <md-tooltip md-direction="top">Back to Top</md-tooltip>
+        <div style="height: 24px">
+            <md-icon layout-align="center center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" width="24" height="24">
+                    <g style="fill:currentColor;" ng-bind-html="pictures.arrow_up"/>
+                </svg>
+            </md-icon>
+        </div>
+    </md-button>
 </body>
 </html>
