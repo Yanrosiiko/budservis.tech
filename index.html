@@ -19,7 +19,7 @@
     <script src="js/angular_controller.js"></script>
 </head>
 <body ng-app="application" ng-controller="applicationCtrl" ng-init="onInit(); extendController('indexCtrl'); indexOnInit();"
-     md-theme="{{currentTheme}}" md-theme-watch layout="column" flex class="ng-cloak" style="overflow: hidden;">
+     md-theme="{{currentTheme}}" md-theme-watch layout="column" flex class="ng-cloak">
     <!-- Top panel -->
     <md-toolbar class="md-toolbar-tools md-hue-2" md-scroll-shrink style="padding: 0 8px;">
         <!-- Mobile menu -->
@@ -235,14 +235,10 @@
         </div>
         <!-- Divider -->
         <span flex style="background-color: white;"></span>
-        <!-- Bottom menu -->
-        <div layout-align="center center" layout-padding class="bottom-footer-{{currentTheme}}-theme bottom-footer-color-{{currentTheme}}-theme" style="flex-grow: inherit;">
-            <div layout="column" layout-padding style="text-align: center;">
-                <span class="md-title" hide-xs="true">Your cooperation with us will be successful and mutually beneficial!</span>
-                <span class="md-subhead" show-xs="true" hide="true">Your cooperation with us will be successful and mutually beneficial!</span>
-                <span class="md-subhead" hide-xs="true">© Copyright <strong>LLC "BIC "Budservis"</strong>. All Rights Reserved</span>
-                <span class="md-body-1" show-xs="true" hide="true">© Copyright <strong>LLC "BIC "Budservis"</strong>. All Rights Reserved</span>
-            </div>
+        <!-- Footer -->
+        <div layout-align="center center" layout-padding ng-if="!pageFooter.endsWith('empty.html')" ng-include="pageFooter"
+             class="footer-{{currentTheme}}-theme fade-element-in" style="flex-grow: inherit;">
+
         </div>
     </md-content>
     <!-- Scroll-up fub-button -->
@@ -251,12 +247,10 @@
                ng-click="scrollTop()"
                aria-label="Back to Top">
         <md-tooltip md-direction="top">Back to Top</md-tooltip>
-        <div style="height: 24px">
-            <md-icon layout-align="center center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" width="24" height="24">
-                    <g style="fill:currentColor;" ng-bind-html="pictures.arrow_up"/>
-                </svg>
-            </md-icon>
+        <div layout='column' layout-align="center center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" width="24" height="24">
+                <g style="fill:currentColor;" ng-bind-html="pictures.arrow_up"/>
+            </svg>
         </div>
     </md-button>
 </body>

@@ -42,12 +42,17 @@ application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeo
         scope.getPageContent = function(page) {
             // console.log(page);
             scope.pageContent = 'parts/empty.html';
+            scope.pageFooter = 'parts/empty.html';
             timeout(scope.getPageContentTimeout, 500, true, page);
         };
         scope.getPageContentTimeout = function(page) {
             // console.log(page);
             location.path(page);
             scope.pageContent = 'parts' + page;
+            timeout(scope.getPageFooterTimeout, 500);
+        };
+        scope.getPageFooterTimeout = function() {
+            scope.pageFooter = 'parts/footer.html';
         };
         scope.$on("$includeContentError", function () {
             window.location = '/budservis.tech/notFound';

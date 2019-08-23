@@ -1,5 +1,5 @@
 'use strict';
-const application = angular.module("application", ['ngMaterial', 'ngAnimate', 'ngMessages'])
+const application = angular.module("application", ['ngMaterial'])
     .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default').primaryPalette('light-blue').accentPalette('light-blue').warnPalette('red');
         let style = "";
@@ -9,7 +9,7 @@ const application = angular.module("application", ['ngMaterial', 'ngAnimate', 'n
             $mdThemingProvider.theme(theme).primaryPalette(palette).accentPalette(palette).warnPalette('red');
             style +=
                 " " +
-                ".bottom-footer-" + theme + "-theme, " +
+                ".footer-" + theme + "-theme, " +
                 "md-toolbar.md-" + theme + "-theme {" +
                 "  background:" +
                 "    repeating-linear-gradient(30deg, transparent 0px, " + $mdThemingProvider._PALETTES[palette]['600'] + " 1px, transparent 2px, transparent 25px, " + $mdThemingProvider._PALETTES[palette]['600'] + " 26px, transparent 27px, transparent 34px)," +
@@ -36,12 +36,8 @@ const application = angular.module("application", ['ngMaterial', 'ngAnimate', 'n
                 "  border-color:" + $mdThemingProvider._PALETTES[palette]['200'] + ";" +
                 "  padding: 0;" +
                 "} " +
-                "button.select-" + theme + "-theme {" +
-                "  color:" + $mdThemingProvider._PALETTES[palette]['900'] + ";" +
-                "  background-color:" + $mdThemingProvider._PALETTES[palette]['200'] + ";" +
-                "}" +
                 // ng-if
-                ".fade-element-in-init" +
+                ".fade-element-in-init, " +
                 ".fade-element-in.ng-enter {" +
                 "  opacity: 1;" +
                 "} " +
@@ -59,35 +55,40 @@ const application = angular.module("application", ['ngMaterial', 'ngAnimate', 'n
                 ".fade-element-in.ng-leave.ng-leave-active {" +
                 "  opacity: 0;" +
                 "} " +
-                // bottom-footer-color
-                ".bottom-footer-color-" + theme + "-theme { ";
+                // footer-color
+                ".footer-" + theme + "-theme { ";
             if (palette === 'lime' || palette === 'yellow' || palette === 'amber') {
                 style += "color: rgba(0,0,0,0.87);";
             } else {
                 style += "color: rgba(255,255,255,0.87);";
             }
+                // buttons
             style +=
                 "} " +
-                // scroll-up fab-button color
-                ".md-button.md-" + theme + "-theme.md-fab," +
-                ".md-button.md-" + theme + "-theme.md-fab md-icon { ";
+                "button.select-" + theme + "-theme {" +
+                "  color:" + $mdThemingProvider._PALETTES[palette]['900'] + ";" +
+                "  background-color:" + $mdThemingProvider._PALETTES[palette]['200'] + ";" +
+                "} " +
+                ".md-button.md-" + theme + "-theme.md-fab { ";
             if (palette === 'lime' || palette === 'yellow' || palette === 'amber') {
-                style += "color: rgba(0,0,0,0.87);" +
-                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['600'] + ";";
+                style +=
+                    "  color: rgba(0,0,0,0.87) !important;" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['600'] + " !important;";
             } else {
-                style += "color: rgba(255,255,255,0.87);" +
-                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['500'] + ";";
+                style +=
+                    "  color: rgba(255,255,255,0.87) !important;" +
+                    "  background-color:" + $mdThemingProvider._PALETTES[palette]['500'] + " !important;";
             }
             style +=
                 "} " +
-                // scroll-up fab-button color :hover
-                ".md-button.md-" + theme + "-theme.md-fab:hover," +
-                ".md-button.md-" + theme + "-theme.md-fab:hover md-icon { ";
+                ".md-button.md-" + theme + "-theme.md-fab:hover { ";
             if (palette === 'lime' || palette === 'yellow' || palette === 'amber') {
-                style += "color: rgba(0,0,0,0.87);" +
+                style +=
+                    "  color: rgba(0,0,0,0.87) !important;" +
                     "  background-color:" + $mdThemingProvider._PALETTES[palette]['700'] + " !important;";
             } else {
-                style += "color: rgba(255,255,255,0.87);" +
+                style +=
+                    "  color: rgba(255,255,255,0.87) !important;" +
                     "  background-color:" + $mdThemingProvider._PALETTES[palette]['600'] + " !important;";
             }
             style +=
