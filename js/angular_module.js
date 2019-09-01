@@ -26,7 +26,6 @@ const application = angular.module("application", ['ngMaterial'])
                 "md-content.md-" + theme + "-theme {" +
                 "  color:" + $mdThemingProvider._PALETTES[palette]['900'] + ";" +
                 "  border-color:" + $mdThemingProvider._PALETTES[palette]['700'] + ";" +
-                "  background-color:" + $mdThemingProvider._PALETTES[palette]['50'] + ";" +
                 "} " +
                 "md-divider.md-" + theme + "-theme.md-hue-2 {" +
                 "  border-color:" + $mdThemingProvider._PALETTES[palette]['700'] + ";" +
