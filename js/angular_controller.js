@@ -2,15 +2,17 @@
 
 application.controller('emptyCtrl', function ($scope) { });
 
-application.controller('applicationCtrl', ['$scope', '$controller', '$sce', 'THEMES', 'CONSTANTS',
-    function (scope, ngController, sce, THEMES, CONSTANTS) {
+application.controller('applicationCtrl', ['$scope', '$controller', '$sce', '$mdTheming', 'THEMES', 'CONSTANTS',
+    function (scope, ngController, sce, mdTheming, THEMES, CONSTANTS) {
         scope.currentTheme = 'lightblue';
         scope.themesList = THEMES.LIST;
         scope.changeTheme = function (newTheme) {
-            if (THEMES.LIST.includes(newTheme)) {
-                scope.currentTheme = newTheme;
-                localStorage.setItem('selected_angular_material_theme', newTheme);
+            if (!THEMES.LIST.includes(newTheme)) {
+                newTheme = 'lightblue';
             }
+            scope.currentTheme = newTheme;
+            mdTheming.generateTheme(newTheme);
+            localStorage.setItem('selected_angular_material_theme', newTheme);
         };
         scope.pictures = {
             colorTheme: sce.trustAsHtml(CONSTANTS.PICTURES.COLOR_THEME),
@@ -81,14 +83,20 @@ application.controller('indexCtrl', ['$scope', '$location', '$mdDialog', '$timeo
         link: function(scope, element, attr) {
             let scrollMainChildren = element.parent().children();
             let isScrolling = false;
+            let position;
 
+            for (let i=0; i < scrollMainChildren.length; i++) {
+                if (scrollMainChildren[i].localName === "md-content") {
+                    position = i;
+                    break;
+                }
+            }
             updateState();
 
             scrollMainChildren.on('scroll', updateState);
 
             function updateState() {
-                // md-content element
-                let newState = scrollMainChildren[1].scrollTop !== 0;
+                let newState = scrollMainChildren[position].scrollTop !== 0;
                 if (newState !== isScrolling) {
                     element.toggleClass(attr.scrollClass, newState);
                 }

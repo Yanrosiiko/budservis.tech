@@ -13,6 +13,10 @@ md-menu-item.md-in-menu-bar,
     white-space: normal !important;
 }
 
+md-dialog {
+    background-color: white;
+}
+
 .md-fab.scroll-fab {
     position: fixed !important;
 

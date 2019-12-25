@@ -2,6 +2,8 @@
 const application = angular.module("application", ['ngMaterial'])
     .config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('default').primaryPalette('light-blue').accentPalette('light-blue').warnPalette('red');
+        $mdThemingProvider.alwaysWatchTheme(true);
+        $mdThemingProvider.generateThemesOnDemand(true);
         let style = "";
         for (let palette in $mdThemingProvider._PALETTES) {
             let theme = palette.replace('-', '');
@@ -24,7 +26,7 @@ const application = angular.module("application", ['ngMaterial'])
             style +=
                 "} " +
                 "md-content.md-" + theme + "-theme {" +
-                "  color:" + $mdThemingProvider._PALETTES[palette]['900'] + ";" +
+                "  color:" + $mdThemingProvider._PALETTES[palette]['900'] + " !important;" +
                 "  border-color:" + $mdThemingProvider._PALETTES[palette]['700'] + ";" +
                 "} " +
                 "md-divider.md-" + theme + "-theme.md-hue-2 {" +
